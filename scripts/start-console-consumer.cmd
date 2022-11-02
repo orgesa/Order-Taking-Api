@@ -1,0 +1,1 @@
+C:\kafka_2.13-3.3.1\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic melita-order-api --from-beginning
