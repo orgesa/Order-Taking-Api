@@ -1,7 +1,7 @@
 package com.melita.service;
 
 import com.melita.model.Order;
-import com.melita.model.PackageMobile;
+import com.melita.model.PackageType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class OrderService {
          ObjectMapper mapper = new ObjectMapper();
          try{
 
-            if(PackageMobile.getTypePakage(request.getProduct().getName(),request.getProduct().getPackageType())){
+            if(PackageType.getTypePakage(request.getProduct().getName(),request.getProduct().getPackageType())){
                kafkaTemplate.send(kafkaTopic, mapper.writeValueAsString(request));
 
                 return  new ResponseEntity<>(request, HttpStatus.OK);

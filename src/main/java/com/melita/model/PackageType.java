@@ -3,7 +3,7 @@ package com.melita.model;
 import lombok.Getter;
 
 @Getter
-public enum PackageMobile {
+public enum PackageType {
 
     INTERNET_250 ("INTERNET_250", "Internet 250Mbps"),
     INTERNET_1 ("INTERNET_1", "Internet 1Gbps"),
@@ -17,7 +17,7 @@ public enum PackageMobile {
     private final String key;
     private final String value;
 
-    PackageMobile(String key, String value) {
+    PackageType(String key, String value) {
         this.key = key;
         this.value=value;
     }
@@ -26,7 +26,7 @@ public enum PackageMobile {
 
     public static Boolean getTypePakage(String key, String value) {
 
-        for (PackageMobile e : PackageMobile.values()) {
+        for (PackageType e : PackageType.values()) {
 
             if (key.equalsIgnoreCase(e.getKey()) && value.equalsIgnoreCase(e.getValue())) {
                 return true;

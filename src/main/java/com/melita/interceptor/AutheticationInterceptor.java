@@ -30,7 +30,7 @@ public class AutheticationInterceptor implements HandlerInterceptor {
 
 
         if (StringUtils.isAllEmpty(xAuth)) {
-            log.error("Autentication error x-auth empty");
+            log.error("Authentication error x-auth empty");
             ErrorType errorType = getError("empty");
             throw new OrderException(7, "KO", errorType, null, null);
         }
@@ -57,7 +57,7 @@ public class AutheticationInterceptor implements HandlerInterceptor {
                 break;
             case "empty":
                 error.setErrorCode("403");
-                error.setErrorDescription(ACCESS_DENIED + " - TOKEN AND SOURCE MUST NOT BE NULL");
+                error.setErrorDescription(ACCESS_DENIED + " - TOKEN MUST NOT BE NULL");
                 break;
             default:
                 break;
